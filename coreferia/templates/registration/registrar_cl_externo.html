@@ -1,0 +1,82 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<section>
+    <div ALIGN=center>
+        Bienvenido a Maipo Grande
+        <img src="{% static 'core/images/logo.png' %}">
+        
+        
+    </div>
+    <h3 ALIGN=center>Registra tu Usuario</h3>
+    <div ALIGN=center>
+        <div class="form-group">
+            <form action="{% url 'registrar_cl_externo' %}" method="post">
+                {% csrf_token %}
+                    <div>
+                        <label for="">{{ form.nom_comp.label }}</label>
+                        {{ form.nom_comp }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.rut.label }}</label>
+                        {{ form.rut }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.fecha_nac.label }}</label>
+                        {{ form.fecha_nac }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.pais.label }}</label>
+                        {{ form.pais }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.correo.label }}</label>
+                        {{ form.correo }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.telefono.label }}</label>
+                        {{ form.telefono }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.direccion.label }}</label>
+                        {{ form.direccion }}
+                    </div>
+                    <div>
+                        <label for="">{{ form.auth_user_username.label }}</label>
+                        {{ form.auth_user_username }} 
+                    </div>
+                    <div>
+                        <label for="">{{ form2.username.label }}</label>
+                        {{ form2.username }}
+                        
+                    </div>
+                    
+                    <div>
+                        <label for="">{{ form2.password1.label }}</label>
+                        {{ form2.password1 }}
+                    </div>
+                    <div>
+                        <label for="">{{ form2.password2.label }}</label>
+                        {{ form2.password2 }}
+                    </div>
+                    
+                    <!--{{ form2.as_table }}
+                    
+                    -->
+
+                
+            
+                <input type="reset" value="Limpiar" />
+                <input type="submit" value="Registrar" />
+            </form>
+        </div>
+        
+    </div>
+</section>
+
+
+
+{% endblock %}

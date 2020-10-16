@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Feria Virtual">
+
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+
+    <!-- Ionic icons-->
+    <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'core/images/logo.png' %}">
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <title>Maipo Grande "Feria Virtual"</title>
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="{% url 'home' %}" ><img src="{% static 'core/images/1.png' %}"  class="logo-brand" alt="logo"> </a> 
+            <!-- Barra Superior -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="{% static 'core/images/menu.svg' %}">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div>
+    <br>
+    <div class="container">
+        {% block contenido %}
+
+        {% endblock %}
+    </div>
+    
+    
+</div>
+
+    <footer class="bgDark">
+        <div class="container">
+            <h1>Maipo Grande "Feria Virtual"<h1>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><img src="{% static 'core/images/instagram.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'core/images/twitter.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'core/images/youtube.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'core/images/dribbble.svg' %}" class="img-fluid"></a></li>
+                <li class="list-inline-item"><a href="#"><img src="{% static 'core/images/facebook.svg' %}" class="img-fluid"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+{% block javascript %}
+{% endblock %}
+</html>

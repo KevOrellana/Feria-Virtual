@@ -1,0 +1,59 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{% static 'core/js/confirmar.js' %}"></script>
+{% endblock %}
+
+
+{% load  crispy_forms_tags %}
+{% if perms.coreferia.add_producto %}
+{% block contenido %}
+<br>
+<br>
+<br>
+<h1>Listado de Productos</h1>
+
+<table class="table">
+    <tr>
+        <th>Codigo</th>    
+        <th>Producto</th>   
+        <th>fecha</th>
+        <th>Foto</th>      
+        <th>Precio</th>   
+        <th>Cantidad</th>   
+        <th>Rut del Productor</th>
+        <th>Opciones</th>
+    </tr>
+    
+    {% for p in productos %}
+    
+    <tr>
+        <td>{{ p.cod_prod }}</td>
+        <td>{{ p.nom_prod }}</td>
+        <td>{{ p.fecha_prod }}</td>
+        <td>{% if p.foto_prod %}
+                <img src="{{ p.foto_prod.url }} " width="100" height="100">
+           {% endif %}
+        </td>
+        <td>{{ p.precio }}</td>
+        <td>{{ p.cantidad }}</td>
+        <td>{{ p.productor_rut.rut }}</td>
+        <td>
+            <a href="{% url 'm_producto' p.cod_prod %} "class="btn btn-primary"">Modificar</a>
+            <a href="#" onclick="confirmarEliminacion({{p.cod_prod}})" class="btn btn-danger">Eliminar</a>
+        </td>
+        <br>
+        
+    </tr>
+
+    {% endfor %}
+</table>
+<input type="button"  onclick="location.href='{% url 'n_producto' %}'" value="Agregar Producto" class="btn btn-success">
+<br>
+<br>
+
+{% endblock %}
+{% endif %}

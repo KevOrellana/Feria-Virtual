@@ -1,0 +1,26 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+        <div ALIGN=center>
+            Bienvenido a Maipo Grande
+            <img src="{% static 'core/images/logo.png' %}">
+        </div>
+        <div ALIGN=center >
+            <form action="" method="post">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input type="submit" value="Login" class="btn btn-success"/>
+            </form>
+        </div>
+
+</section>
+
+<!--  -->
+{% endblock %}
+
+

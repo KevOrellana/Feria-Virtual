@@ -1,0 +1,51 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% load  crispy_forms_tags %}
+
+{% block contenido %}
+<br>
+{% if perms.coreferia.add_producto %}
+<br>
+<br>
+<h1>Agregar Nuevo Producto</h1>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <br>
+    <div>
+        
+        {{ form.nom_prod |as_crispy_field }}
+    </div>
+    <div>
+        
+        {{ form.fecha_prod  |as_crispy_field }}
+    </div>
+    
+    <div>
+        
+        {{ form.precio |as_crispy_field }}
+    </div>
+    <div>
+        
+        {{ form.cantidad |as_crispy_field }}
+    </div>
+    <div>
+        
+        {{ form.productor_rut |as_crispy_field }}
+    </div>
+    <div >
+        
+        {{ form.foto_prod  |as_crispy_field }}
+    </div>
+    <br>
+    <input type="reset" value="Limpiar" class="btn btn-info">
+    <input type="submit", value="Guardar" class="btn btn-success">
+    <br>
+    <br>
+    {{ mensaje }}
+</form>
+{% endif %}
+{% endblock %}

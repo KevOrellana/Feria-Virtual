@@ -1,0 +1,50 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+    <div ALIGN=center>
+        Bienvenido a Maipo Grande
+        <img src="{% static 'core/images/logo.png' %}">
+    </div>
+    <h3 ALIGN=center>Elige tu Usuario</h3>
+   
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            
+
+            <a href="{% url 'registrar_cl_externo' %}"> <img class="img-fluid" src="{% static 'core/images/usuarios/cliente_externo.jpg' %}" alt="Cliente Externo" />
+                <h4>Cliente Externo</h4>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            
+            <a href="{% url 'registrar_cl_interno' %}"><img class="img-fluid" src="{% static 'core/images/usuarios/cliente_interno.png' %}" alt="Cliente interno" />
+                <h4>Cliente interno</h4>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" >
+            <a href="{% url 'registrar_productor' %}"><img class="img-fluid" src="{% static 'core/images/usuarios/productor1.png' %}" alt="Productor" />
+                <h4>Productor</h4>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <a href=""><img class="img-fluid" src="{% static 'core/images/usuarios/transportista.png' %}" alt="Transportista" />
+                <h4>Transportista</h4>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <a href="{% url 'registrar_consultor' %}"><img class="img-fluid" src="{% static 'core/images/usuarios/consultor.png' %}" alt="Consultor" />
+                <h4>Consultor</h4>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

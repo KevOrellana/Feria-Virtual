@@ -1,0 +1,83 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<section id="hero">
+        <div class="container">
+            <div class="content-center">
+                <h1 class="mt-5">Website Feria Virtual</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ea consequuntur, odit veniam mollitia
+                    aliquam reiciendis dignissimos, vitae sapiente neque, cum dolorum.</p>
+                <a href="{% url 'v_producto' %}"class="btn btn-secondary mt-4">Explora la Tienda<img src="{% static 'core/images/arrow-right.svg' %}" class="ml-2"></a>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="productos">
+        <div class="container-fluid">
+            <div class="content-center">
+                <h2>Los Mejores Productos de <b>toda la region</b></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ea consequuntur, odit veniam mollitia
+                    aliquam reiciendis dignissimos, vitae sapiente neque, cum dolorum. Suscipit expedita obcaecati
+                    nesciunt error ut quidem autem.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="producto-container">
+                        <div class="producto-details">
+                            <a href="#">
+                                <h2>Manzana</h2>
+                            </a>
+                            <a href="#">
+                                <p>— Mayor Fruta Vendida</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'core/images/portfolio-01.jpg' %}" class="img-fluid" alt="Portfolio 01">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="producto-container">
+                        <div class="producto-details">
+                            <a href="#">
+                                <h2>Platano</h2>
+                            </a>
+                            <a href="#">
+                                <p>— Mayor Fruta Vendida</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'core/images/portfolio-02.jpg' %}" class="img-fluid" alt="Portfolio 02">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="producto-container">
+                        <div class="producto-details">
+                            <a href="#">
+                                <h2>Tomate</h2>
+                            </a>
+                            <a href="#">
+                                <p>— Mayor Verdura Vendida</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'core/images/portfolio-03.jpg' %}" class="img-fluid" alt="Portfolio 03">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="producto-container">
+                        <div class="producto-details">
+                            <a href="#">
+                                <h2>Lechuga</h2>
+                            </a>
+                            <a href="#">
+                                <p>— Mayor Verdura Vendida</p>
+                            </a>
+                        </div>
+                        <img src="{% static 'core/images/portfolio-04.jpg' %}" class="img-fluid" alt="Portfolio 04">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% load  crispy_forms_tags %}
+
+{% block contenido %}
+<br>
+
+<br>
+<br>
+<h1>Reporte de ventas</h1>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    
+    <table class="table">
+        <tr>
+            <th>Codigo</th>    
+            <th>Usuario</th>   
+            <th>Cantidad total</th>
+            <th>precio total</th> 
+            <th>Opciones</th>
+        </tr>
+        
+        {% for p in orden %}
+            
+            <tr><!--Se ocupan el numero de columnas para poder llamarlas dentro de un procedimiento-->
+                <td>{{ p.0 }}</td><!--ID orden-->
+                <td>{{ p.1 }}</td><!--Auth user username (usuario) -->
+                <td>{{ p.2 }}</td><!--Cantidad total -->
+                <td>{{ p.3 }}</td><!--Precio total-->
+                <td><a href="# "class="btn btn-primary btn-xl">Generar PDF <ion-icon name="print"></ion-icon></a></td>
+                <br>                
+            </tr>
+    
+        {% endfor %}
+    </table>
+    
+    {{ mensaje }}
+</form>
+
+{% endblock %}

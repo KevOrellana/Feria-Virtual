@@ -1,0 +1,27 @@
+{% extends 'coreferia/base.html' %}
+
+{% load static %}
+
+{% load  crispy_forms_tags %}
+
+{% block contenido %}
+<br>
+<br>
+<br>
+<h1>Modificar Producto</h1>
+
+<form action="" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+ 
+    {{ form | crispy }}
+
+    <br>
+    <input type="reset" value="Limpiar" class="btn btn-info">
+    <input type="submit", value="modificar" class="btn btn-success">
+    <br>
+    <br>
+    {{ mensaje }}
+    
+</form>
+
+{% endblock %}
